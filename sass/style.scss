@@ -66,9 +66,8 @@ body {
     color: #2392db;
     font-family: "Noto Sans JP";
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
-    line-height: 170%; /* 27.2px */
+    line-height: 1.7; /* 27.2px */
     letter-spacing: 3px;
   }
 }
@@ -591,7 +590,6 @@ body {
   text-align: center;
   font-size: 12px;
   font-weight: 700;
-  line-height: normal;
   display: flex;
   align-items: center;
 }
@@ -801,9 +799,8 @@ body {
 //     color: #2392db;
 //     font-family: "Noto Sans JP";
 //     font-size: 16px;
-//     font-style: normal;
 //     font-weight: 700;
-//     line-height: 170%; /* 27.2px */
+//     line-height: 1.7; /* 27.2px */
 //     letter-spacing: 3px;
 //   }
 // }
@@ -1031,9 +1028,8 @@ body {
     color: #2392db;
     font-family: "Noto Sans JP";
     font-size: 14px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 170%; /* 23.8px */
+    line-height: 1.7; /* 23.8px */
     letter-spacing: 0.01em;
   }
 }
@@ -1052,7 +1048,7 @@ body {
   padding: 0 30px;
 
   @include mq("pc") {
-    padding: 0 160px;
+    padding: 0 100px;
   }
 }
 
@@ -1060,6 +1056,8 @@ body {
 }
 
 .price__boxes-container {
+  max-width: 1069px;
+  margin: 0 auto;
 }
 
 .price__boxes {
@@ -1157,4 +1155,196 @@ body {
 .price__button {
   margin-top: 30px;
   text-align: center;
+}
+
+// CTA
+.cta {
+  background: linear-gradient(90deg, #2390dc 0%, #2bc8c8 100%);
+  padding: 60px 0;
+
+  @include mq("pc") {
+    padding-top: 80px;
+    padding-bottom: 79px;
+  }
+}
+
+.cta__inner {
+  padding: 0 30px;
+
+  @include mq("pc") {
+    padding: 0 456px;
+  }
+}
+
+.cta__content {
+  text-align: center;
+}
+
+.cat__heading {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.7; /* 44.2px */
+  letter-spacing: 2.6px;
+}
+
+.cta__text {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7; /* 27.2px */
+  letter-spacing: 1.6px;
+}
+
+.cta__button {
+  margin-top: 17px;
+
+  a {
+    border-radius: 50px;
+    border: 2px solid #fff;
+    background: transparent;
+    padding: 7px 52px;
+  }
+}
+
+// フッター
+.footer {
+  padding-top: 46px;
+  padding-bottom: 11px;
+  background: linear-gradient(90deg, #2390dc 0%, #2bc8c8 100%);
+
+  @include mq("pc") {
+    padding-top: 60px;
+  }
+}
+
+.footer__inner {
+  padding: 0 76px;
+
+  @include mq("pc") {
+    padding-left: calc(109 / 1280 * 100%);
+    padding-right: calc(109 / 1280 * 100%);
+    // padding-left: 10px;
+    // padding-right: 10px;
+  }
+}
+
+.footer__contents {
+  text-align: center;
+
+  @include mq("pc") {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.footer__company {
+  margin-top: 4px;
+}
+
+.footer__logo {
+  img {
+    width: 160px;
+  }
+}
+
+.footer__text {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @include mq("pc") {
+    margin-top: 16px;
+  }
+}
+
+.footer__address {
+  color: var(--ffffff, #fff);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.footer_tel,
+.footer_fax {
+  color: var(--ffffff, #fff);
+  font-family: "Noto Sans JP";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.footer__link {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include mq("pc") {
+    margin-top: 0;
+    margin-left: 78px;
+    flex-direction: row;
+    gap: 50px;
+
+    a + a {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 16px;
+        border-left: 1px solid #fff;
+        top: 3px;
+        left: -26px;
+        margin: auto;
+      }
+    }
+  }
+
+  a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7; /* 23.8px */
+  }
+}
+
+.footer__sns {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+
+  @include mq("pc") {
+    margin-top: 0;
+    padding-left: 87px;
+  }
+
+  a {
+    img {
+      width: 30px;
+    }
+  }
+}
+
+.footer__copyright {
+  font-family: $font-family-ja;
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-top: 47px;
+  color: var(--ffffff, #fff);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.001em;
+
+  @include mq("pc") {
+    margin-top: 69px;
+  }
 }
