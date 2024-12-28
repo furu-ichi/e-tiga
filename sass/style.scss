@@ -49,6 +49,37 @@ body {
   }
 }
 
+.title-underline {
+  position: relative;
+  color: #238fdc;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 170%; /* 51px */
+  letter-spacing: 3px;
+
+  @include mq("pc") {
+    font-size: 36px;
+    letter-spacing: 3.6px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #2bc8c8;
+    bottom: -9px;
+    transform: translateX(-52%);
+    left: 50%;
+
+    @include mq("pc") {
+      bottom: -2px;
+      transform: translateX(-50%);
+    }
+  }
+}
+
 .link__button {
   text-align: center;
   margin-top: 30px;
@@ -330,6 +361,19 @@ body {
 .drawer-icon {
   position: relative;
   width: 40px;
+  height: 20px;
+  z-index: 101;
+  background-image: url(../img/close.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  transition: background-image 0.3s;
+
+  &.is-checked {
+    width: 28px;
+    height: 28px;
+    background-image: url(../img/close_x.png);
+  }
 }
 
 .header__nav {
@@ -424,6 +468,53 @@ body {
 //   background: linear-gradient(90deg, #2188de 1.75%, #2bcbc6 97.75%);
 //   box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
 // }
+
+// ドロワーメニュー
+.drawer {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 142, 221, 0.9) 0%,
+    rgba(43, 198, 201, 0.9) 100%
+  );
+  z-index: 100;
+
+  &.is-checked {
+    display: block;
+  }
+}
+
+.drawer__nav {
+  padding: 130px 124px 10px;
+  text-align: center;
+}
+
+.drawer__logo {
+  img {
+    width: 180px;
+  }
+}
+
+.drawer__links {
+  margin-top: 60.05px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.drawer__link {
+  color: #fff;
+  font-family: "Noto Sans JP";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 170%; /* 34px */
+}
 
 // メインビジュアル
 .mv {
@@ -646,36 +737,36 @@ body {
   }
 }
 
-.news__title {
-  position: relative;
-  color: #238fdc;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 170%; /* 51px */
-  letter-spacing: 3px;
+// .news__title {
+//   position: relative;
+//   color: #238fdc;
+//   text-align: center;
+//   font-size: 30px;
+//   font-weight: 700;
+//   line-height: 170%; /* 51px */
+//   letter-spacing: 3px;
 
-  @include mq("pc") {
-    font-size: 36px;
-    letter-spacing: 3.6px;
-  }
+//   @include mq("pc") {
+//     font-size: 36px;
+//     letter-spacing: 3.6px;
+//   }
 
-  &::after {
-    position: absolute;
-    content: "";
-    width: 60px;
-    height: 3px;
-    background: #2bc8c8;
-    bottom: -9px;
-    transform: translateX(-52%);
-    left: 50%;
+//   &::after {
+//     position: absolute;
+//     content: "";
+//     width: 60px;
+//     height: 3px;
+//     background: #2bc8c8;
+//     bottom: -9px;
+//     transform: translateX(-52%);
+//     left: 50%;
 
-    @include mq("pc") {
-      bottom: -2px;
-      transform: translateX(-50%);
-    }
-  }
-}
+//     @include mq("pc") {
+//       bottom: -2px;
+//       transform: translateX(-50%);
+//     }
+//   }
+// }
 
 .news__list {
   margin-top: 55px;
@@ -1172,7 +1263,7 @@ body {
   padding: 0 30px;
 
   @include mq("pc") {
-    padding: 0 456px;
+    padding: 0 10px;
   }
 }
 
@@ -1205,6 +1296,175 @@ body {
     border: 2px solid #fff;
     background: transparent;
     padding: 7px 52px;
+  }
+}
+
+// Q&A
+.qa {
+  padding: 60px 0;
+  background: #f4fbff;
+
+  @include mq("pc") {
+    padding-top: 100px;
+    padding-bottom: 121px;
+  }
+}
+
+.qa__inner {
+  padding: 0 15px;
+
+  @include mq("pc") {
+    // padding: 0 240px;
+    max-width: calc(800px + 15px * 2);
+    margin: 0 auto;
+  }
+}
+
+.qa__title {
+  font-size: 36px;
+
+  &::after {
+    bottom: -4px;
+  }
+}
+
+.qa__boxes {
+  margin-top: 51px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include mq("pc") {
+    margin-top: 48px;
+    gap: 20px;
+  }
+
+  // 最初のQ&Aはデフォルトで開いておく
+  .qa__box {
+    &:first-child {
+      .qa-box__body {
+        display: block;
+      }
+    }
+  }
+}
+
+.qa__box {
+  &.is-open {
+    .qa-box__head-text {
+      &::after {
+        background-color: transparent; // 非表示の為背景を透明色
+        transform: rotate(
+          0deg
+        ); // 回転アニメーションの為、横棒に被せて配置しておく
+      }
+    }
+  }
+}
+
+.qa-box {
+}
+
+.qa-box__head {
+  width: 100%;
+  border-radius: 10px;
+  border: 0px solid #707070;
+  background: var(--rgb-255255255, #fff);
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.qa-box__head-icon {
+  padding-bottom: 7px; // アイコン位置の微調整
+  display: block;
+  width: 50px;
+  color: #fff;
+  font-family: $font-family-ja;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1; /* 26px */
+  border-radius: 10px 0px 0px 10px;
+  background: #238fdc;
+  flex-shrink: 0;
+
+  // 垂直方向中央寄せ
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mq("pc") {
+    width: 71px;
+  }
+}
+
+.qa-box__head-text {
+  display: block;
+  text-align: left;
+  padding: 10px 42px 10px 10px;
+  color: #333;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7; /* 25.5px */
+  flex-grow: 1;
+  position: relative;
+
+  @include mq("pc") {
+    padding: 12px 55px 12px 14px;
+    font-size: 16px;
+  }
+
+  // 開閉アイコン
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: #2392db;
+    width: 20px;
+    height: 2px;
+    right: 10px;
+    top: 50%;
+
+    @include mq("pc") {
+      right: 14px;
+    }
+  }
+  // 横棒の表現
+  &::before {
+    transform: translateY(-50%);
+  }
+  // 縦棒の表現
+  &::after {
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.3s, background-color 0.3s;
+  }
+}
+
+.qa-box__body {
+  display: none;
+  margin-top: 14px;
+  margin-left: 20px;
+  border-radius: 10px;
+  background: #fff;
+
+  @include mq("pc") {
+    margin-top: 6px;
+    margin-left: 41px;
+  }
+}
+
+.qa-box__body-text {
+  display: block;
+  padding: 10px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7; /* 23.8px */
+
+  @include mq("pc") {
+    padding: 12px 14px;
+    font-size: 16px;
   }
 }
 

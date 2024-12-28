@@ -73,8 +73,12 @@
         <h1 class="header__logo">
           <a href=""><img src="./img/logo.png" alt="" /></a>
         </h1>
-        <button type="button" class="header__open drawer-icon">
-          <img src="./img/close.png" alt="" />
+        <button
+          id="js-drawer-icon"
+          type="button"
+          class="header__open drawer-icon"
+        >
+          <!-- <img src="./img/close.png" alt="" /> -->
         </button>
         <nav class="header__nav">
           <a href="" class="header__link"
@@ -87,6 +91,20 @@
         </nav>
       </div>
     </header>
+
+    <div id="js-drawer" class="drawer">
+      <div class="drawer__nav">
+        <div class="drawer__logo">
+          <img src="./img/logo-white.png" alt="" />
+        </div>
+        <nav class="drawer__links">
+          <a href="" class="drawer__link">e-tigaとは</a>
+          <a href="" class="drawer__link">ご利用の流れ</a>
+          <a href="" class="drawer__link">プラン</a>
+          <a href="" class="drawer__link">運営会社</a>
+        </nav>
+      </div>
+    </div>
 
     <!-- メインビジュアル -->
     <div class="mv">
@@ -189,7 +207,7 @@
 
     <section class="news">
       <div class="news__inner">
-        <h2 class="news__title">NEWS</h2>
+        <h2 class="title-underline">NEWS</h2>
         <ul class="news__list">
           <li class="news__item news-item">
             <time datetime="" class="news-item__date">2022年12月15日</time>
@@ -458,6 +476,64 @@
           <p class="cta__text">ライトプランなら無料でお使いいただけます。</p>
           <div class="cta__button">
             <a class="button" href="">お申し込み</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study">
+      <div class="case-study__inner"></div>
+    </section>
+
+    <section class="qa">
+      <div class="qa__inner">
+        <h2 class="title-underline qa__title">Q&A</h2>
+        <div class="qa__boxes">
+          <div class="qa__box qa-box is-open">
+            <button type="button" class="qa-box__head">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text">ここにテキストが入ります。</span>
+            </button>
+            <div class="qa-box__body">
+              <span class="qa-box__body-text"
+                >ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span
+              >
+            </div>
+          </div>
+          <div class="qa__box qa-box">
+            <button type="button" class="qa-box__head">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text">ここにテキストが入ります。</span>
+            </button>
+            <div class="qa-box__body">
+              <span class="qa-box__body-text"
+                >ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span
+              >
+            </div>
+          </div>
+          <div class="qa__box qa-box">
+            <button type="button" class="qa-box__head">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text"
+                >ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span
+              >
+            </button>
+            <div class="qa-box__body">
+              <span class="qa-box__body-text"
+                >ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span
+              >
+            </div>
+          </div>
+          <div class="qa__box qa-box">
+            <button type="button" class="qa-box__head">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text">ここにテキストが入ります。</span>
+            </button>
+            <div class="qa-box__body">
+              <span class="qa-box__body-text"
+                >ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</span
+              >
+            </div>
           </div>
         </div>
       </div>
