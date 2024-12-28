@@ -11,3 +11,32 @@ $(".qa-box__head").on("click", function () {
   $(this).parent().toggleClass("is-open");
   $(this).next().slideToggle();
 });
+
+// ケーススタディーのSwiper
+const swiper = new Swiper("#js-case-study-swiper", {
+  spaceBetween: 18,
+
+  // slidesPerView: "auto",
+  slidesPerView: 1.25,
+
+  // Optional parameters
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: "#js-case-study-pagination",
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: "#js-case-study-next",
+    prevEl: "#js-case-study-prev",
+  },
+
+  breakpoints: {
+    429: {
+      slidesPerView: 3,
+    },
+  },
+});

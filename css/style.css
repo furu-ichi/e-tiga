@@ -1089,6 +1089,131 @@ body {
   padding: 7px 52px;
 }
 
+.case-study {
+  padding: 60px 0;
+}
+
+.case-study__inner {
+  padding-left: 20px;
+}
+
+@media screen and (min-width: 429px) {
+  .case-study__content {
+    padding: 0 62px;
+  }
+}
+
+.case-study__swiper {
+  margin-top: 50px;
+  padding-bottom: 42px;
+  padding-left: 8px;
+  margin-left: -8px;
+}
+
+.case-study-card {
+  border-radius: 4px;
+  background: var(--ffffff, #fff);
+  width: 100%;
+}
+
+.case-study-card__image img {
+  width: 100%;
+}
+
+.case-study-card__text {
+  padding: 14px 10px;
+}
+
+.case-study-card__title {
+  color: #228ddd;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.7; /* 25.5px */
+}
+
+.case-study-card__id {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.case-study-card__company {
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.7; /* 20.4px */
+}
+
+.case-study-card__name {
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.7; /* 20.4px */
+}
+
+.case-study-card__industry {
+  margin-top: 10px;
+  color: #9d9d9d;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7; /* 20.4px */
+}
+
+.case-study__pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 0 !important;
+}
+.case-study__pagination .swiper-pagination-bullet {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  width: 12px;
+  height: 12px;
+}
+@media screen and (min-width: 429px) {
+  .case-study__pagination {
+    display: none;
+  }
+}
+
+.case-study__prev,
+.case-study__next {
+  position: absolute;
+  content: "";
+  margin-top: -40px;
+  width: 44px;
+  height: 44px;
+}
+.case-study__prev::after,
+.case-study__next::after {
+  display: none;
+}
+
+.case-study__prev {
+  background: url(../img/case-study-prev.png) no-repeat center center/contain;
+  left: 0;
+}
+
+.case-study__next {
+  background: url(../img/case-study-next.png) no-repeat center center/contain;
+  right: 10px;
+}
+
+.case-study__button a {
+  padding: 9px 54px;
+  border-radius: 2px;
+  border: 1px solid #2392db;
+  -webkit-box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
+          box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
+}
+
 .qa {
   padding: 60px 0;
   background: #f4fbff;
